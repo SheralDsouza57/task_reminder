@@ -15,7 +15,8 @@ class AddTaskScreen extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(30),
         decoration: BoxDecoration(
-            color: Colors.white,
+            color: Theme.of(context).primaryColor,
+            // color: Colors.white,
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(30), topRight: Radius.circular(30))),
         child: Column(
@@ -27,7 +28,8 @@ class AddTaskScreen extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: 25,
-                  color: Colors.indigo,
+                  // color: Colors.indigo
+                  color: Theme.of(context).primaryColor,
                   fontWeight: FontWeight.w500),
             ),
             TextField(
@@ -60,7 +62,8 @@ class AddTaskScreen extends StatelessWidget {
                   },
                   child: Icon(
                     Icons.date_range,
-                    color: Colors.indigo,
+                    color: Theme.of(context).appBarTheme.backgroundColor,
+                    // color: Colors.indigo,
                   ),
                 ),
                 TextButton(
@@ -69,7 +72,9 @@ class AddTaskScreen extends StatelessWidget {
                   },
                   child: Icon(
                     Icons.timer,
-                    color: Colors.indigo,
+                    color: Theme.of(context).appBarTheme.backgroundColor,
+
+                    // color: Colors.indigo,
                   ),
                 )
               ],
@@ -80,8 +85,12 @@ class AddTaskScreen extends StatelessWidget {
             TextButton(
               style: ButtonStyle(
                 backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.indigo),
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                    // MaterialStateProperty.all<Color>(Colors.indigo),
+                    MaterialStateProperty.all<Color>(
+                        Theme.of(context).appBarTheme.backgroundColor!),
+                // foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                foregroundColor: MaterialStateProperty.all<Color>(
+                    Theme.of(context).primaryColor),
               ),
               onPressed: () {
                 // print(newTaskTitle);

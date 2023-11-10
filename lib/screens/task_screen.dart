@@ -10,7 +10,8 @@ class TaskScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.indigo,
+      // backgroundColor: Colors.indigo,
+      backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -20,19 +21,21 @@ class TaskScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CircleAvatar(
-                  child: Icon(
-                    Icons.list,
-                    size: 30,
-                    color: Colors.indigo,
-                  ),
-                  backgroundColor: Colors.white,
+                  child: Icon(Icons.list,
+                      size: 30,
+                      color: Theme.of(context).appBarTheme.backgroundColor
+                      // color: Colors.indigo,
+                      ),
+                  // backgroundColor: Colors.white,
+                  backgroundColor: Theme.of(context).primaryColor,
                   radius: 30,
                 ),
                 SizedBox(height: 20),
                 Text(
                   'Task Reminder',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Theme.of(context).primaryColor,
+                      // color: Colors.white,
                       fontSize: 30,
                       fontWeight: FontWeight.w700),
                 ),
@@ -41,7 +44,9 @@ class TaskScreen extends StatelessWidget {
                 ),
                 Text(
                   '${Provider.of<TaskData>(context).taskCount} Tasks left',
-                  style: TextStyle(color: Colors.white, fontSize: 18),
+                  style: TextStyle(
+                      color: Theme.of(context).primaryColor, fontSize: 18),
+                  // style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
                 SizedBox(
                   height: 10,
@@ -53,7 +58,8 @@ class TaskScreen extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Theme.of(context).primaryColor,
+                // color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
@@ -82,8 +88,12 @@ class TaskScreen extends StatelessWidget {
 
             print('pressed');
           },
-          backgroundColor: Colors.indigo,
-          child: Icon(Icons.add),
+          backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+          // backgroundColor: Colors.indigo,
+          child: Icon(
+            Icons.add,
+            color: Theme.of(context).primaryColor,
+          ),
         ),
       ),
     );

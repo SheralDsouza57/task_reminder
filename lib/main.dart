@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:task_reminder/models/tasks_data.dart';
 import 'screens/task_screen.dart';
+import 'themes/theme_class.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,10 @@ class MyApp extends StatelessWidget {
       // create: (BuildContext context) {
       //   TaskData();
       // },
-      child: const MaterialApp(
+      child: MaterialApp(
+        themeMode: ThemeMode.system,
+        theme: ThemeClass.lightTheme,
+        darkTheme: ThemeClass.darkTheme,
         home: TaskScreen(),
       ),
     );
