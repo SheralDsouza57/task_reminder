@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:task_reminder/models/task.dart';
 import 'package:task_reminder/models/tasks_data.dart';
 
 class AddTaskScreen extends StatelessWidget {
