@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:task_reminder/models/task.dart';
+import 'package:task_reminder/models/tasks_data.dart';
 
 class AddTaskScreen extends StatelessWidget {
   // const AddTaskScreen({Key? key}) : super(key: key);
-
-  final Function addTaskCallback;
-  AddTaskScreen(this.addTaskCallback);
 
   @override
   Widget build(BuildContext context) {
     TimeOfDay timeOfDay = TimeOfDay.now();
     DateTime selected = DateTime.now();
-    String? newTaskTitle;
-    String? newTaskDescription;
+    String newTaskTitle = '';
+    String newTaskDescription = '';
     return Container(
       child: Container(
         padding: EdgeInsets.all(30),
@@ -85,10 +85,11 @@ class AddTaskScreen extends StatelessWidget {
                 foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
               ),
               onPressed: () {
-                addTaskCallback(newTaskTitle, newTaskDescription);
-
                 // print(newTaskTitle);
                 // print(newTaskDescription);
+                Provider.of<TaskData>(context, listen: false)
+                    .addTask(newTaskTitle, newTaskDescription);
+                Navigator.pop(context);
               },
               child: Text('Add'),
             )

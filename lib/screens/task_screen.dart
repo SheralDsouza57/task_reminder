@@ -1,21 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:task_reminder/models/tasks_data.dart';
 import 'package:task_reminder/widgets/tasks_list.dart';
 import 'package:task_reminder/screens/add_task_screen.dart';
-import 'package:task_reminder/models/task.dart';
+import 'package:provider/provider.dart';
 
-class TaskScreen extends StatefulWidget {
+class TaskScreen extends StatelessWidget {
   const TaskScreen({Key? key}) : super(key: key);
-
-  @override
-  State<TaskScreen> createState() => _TaskScreenState();
-}
-
-class _TaskScreenState extends State<TaskScreen> {
-  List<Task> tasks = [
-    Task(title: 'buy milk', description: 'go to the shop and buy milk'),
-    Task(title: 'dmart', description: 'go to dmart'),
-    Task(title: 'nails', description: 'do your nails')
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +40,7 @@ class _TaskScreenState extends State<TaskScreen> {
                   height: 10,
                 ),
                 Text(
-                  '${tasks.length} Tasks left',
+                  '${Provider.of<TaskData>(context).taskCount} Tasks left',
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
                 SizedBox(
@@ -69,7 +59,7 @@ class _TaskScreenState extends State<TaskScreen> {
                   topRight: Radius.circular(30),
                 ),
               ),
-              child: TasksList(tasks),
+              child: TasksList(),
             ),
           ),
         ],
@@ -85,16 +75,7 @@ class _TaskScreenState extends State<TaskScreen> {
                 child: Container(
                   padding: EdgeInsets.only(
                       bottom: MediaQuery.of(context).viewInsets.bottom),
-                  child: AddTaskScreen((newTaskTitle, newTaskDescription) {
-                    setState(() {
-                      tasks.add(Task(
-                          title: newTaskTitle,
-                          description: newTaskDescription));
-                    });
-                    Navigator.pop(context);
-                    print(newTaskTitle);
-                    print(newTaskDescription);
-                  }),
+                  child: AddTaskScreen(),
                 ),
               ),
             );
