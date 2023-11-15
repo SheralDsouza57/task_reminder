@@ -29,3 +29,10 @@ https://github.com/SheralDsouza57/task_reminder/assets/123448228/037b9240-9c65-4
 Dark Mode:
 
 https://github.com/SheralDsouza57/task_reminder/assets/123448228/07b252c0-5522-44cd-b8a9-87ac0cdf4c5d
+
+Setup and Installing the Flutter SDK:
+https://docs.flutter.dev/get-started/install/macos
+
+Setup an editor and run the app:
+https://docs.flutter.dev/get-started/editor
+
