@@ -16,10 +16,13 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 Adding Tasks:
+
 https://github.com/SheralDsouza57/task_reminder/assets/123448228/876a320d-4ca5-4978-9342-842d9d92fbd6
 
 Deleting Tasks on long press:
+
 https://github.com/SheralDsouza57/task_reminder/assets/123448228/037b9240-9c65-4b09-893d-5c47d3027588
 
 Dark Mode:
+
 https://github.com/SheralDsouza57/task_reminder/assets/123448228/07b252c0-5522-44cd-b8a9-87ac0cdf4c5d
